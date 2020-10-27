@@ -5,7 +5,6 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: cuijx/node-web-app
-      pushRemote: true
       registry: index.docker.io
   when:
     branch:
