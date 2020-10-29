@@ -1,11 +1,28 @@
 stages:
+- name: buildimage
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: cuijx/node-web-app
+      registry: index.docker.io
+  when:
+    branch:
+      include:
+      - main
+    event:
+      include:
+      - push
 - name: deploy
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
   when:
+    branch:
+      include:
+      - main
     event:
       include:
-      - tag
+      - push
 timeout: 60
 notification: {}
