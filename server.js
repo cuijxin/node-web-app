@@ -15,5 +15,9 @@ app.get('/ping', (req, res)=> {
   res.send('pong');
 });
 
+app.get('/hi', (req, res)=> {
+  res.send("Hello, there");
+});
+
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
