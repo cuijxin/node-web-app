@@ -31,7 +31,7 @@ spec:
         app: node-web-app
     spec:
       containers:
-      - image: cuijx/node-web-app:${CICD_EXECUTION_SEQUENCE}
+      - image: cuijx/node-web-app:${CICD_GIT_COMMIT}
         imagePullPolicy: IfNotPresent
         name: node-web-app
         ports:
