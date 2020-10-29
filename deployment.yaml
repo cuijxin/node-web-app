@@ -32,6 +32,7 @@ spec:
     spec:
       containers:
       - image: cuijx/node-web-app
+        imagePullPolicy: Always
         name: node-web-app
         ports:
         - containerPort: 8080
